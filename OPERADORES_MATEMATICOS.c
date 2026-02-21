@@ -73,7 +73,8 @@ int main(){
     //Pós-decremento
     numero1 = 1, numero2 = 0;
     numero1 = numero2--;
-    printf("Numero1: %i\nNumero2: %i\n\n", numero1, numero2);    
+    printf("Numero1: %i\nNumero2: %i\n\n", numero1, numero2);
+      
 
     return 0;
 }
