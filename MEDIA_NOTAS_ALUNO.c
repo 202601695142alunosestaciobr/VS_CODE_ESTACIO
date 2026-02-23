@@ -8,7 +8,7 @@ int main(){ //Função principal : Começa a execução. Toda aplicação em C c
     float nota_portugues = 0, nota_matematica = 0, nota_redacao = 0, nota_ciencia = 0;
     float soma_soma_notas = 0, resultado_notas = 0;
 
-    printf("**CALCULADORA DE MEDIAS ENSINO MEDIO\n");   //Saída de dados : printf(); imprime a mensagem. O \n adiciona uma nova linha ao final da mensagem.
+    printf("**CALCULADORA DE MEDIAS ENSINO MEDIO**\n");   //Saída de dados : printf(); imprime a mensagem. O \n adiciona uma nova linha ao final da mensagem.
 
     printf("INFORME SEU NOME:\n");
     scanf(" %s", nome_aluno); //Ao suar %s não a necessidade de colocar &
@@ -32,7 +32,9 @@ int main(){ //Função principal : Começa a execução. Toda aplicação em C c
     printf("*****   *****");
     printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
     printf("SUMA MÉDIA: %.2f \n", resultado_notas);
+    printf("*****   *****");
 
+    
     return 0; //Fim do programa : return 0; indica que o programa terminou com sucesso..
 
 }
