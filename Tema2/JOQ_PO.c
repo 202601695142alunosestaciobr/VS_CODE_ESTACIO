@@ -11,9 +11,11 @@ int main(){
     printf("1. Pedra\n2. Papel\n3. Tesoura\n\n");
     scanf("%u", &escolha_jogador);
 
+    /*Trecho do código responsavel pela escolha aleatória do computador*/
     srand(time(0));
     escolha_comptador = rand() % 3 + 1;
 
+    /*Trecho Para exibição da decisão tomada pelo Jogador e Computador*/
     switch (escolha_jogador)
     {
     case 1:
@@ -43,8 +45,8 @@ int main(){
         break;
     }
 
+    /*Estrutura de decisão para fazer a comparação e definir quem ganho o jogo*/
     /*Pedra ganha Tesoura, tesoura ganha papel, papel ganha Pedra*/
-
     if (escolha_comptador == escolha_jogador)
     {
         printf("### Jogo Empatado ###\n\n");
