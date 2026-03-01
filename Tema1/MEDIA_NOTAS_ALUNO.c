@@ -29,11 +29,24 @@ int main(){ //Função principal : Começa a execução. Toda aplicação em C c
     soma_soma_notas = nota_portugues + nota_matematica + nota_redacao + nota_ciencia;
     resultado_notas = soma_soma_notas/4;
 
-    printf("*****   *****");
-    printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
-    printf("SUMA MÉDIA: %.2f \n", resultado_notas);
-    printf("*****   *****");
+    if(resultado_notas >= 7){//Estruturas de decisão composta if-else, compara dois valores e reage ao código.
+        /*Se Verdadeiro*/
+        printf("*****   *****");
+        printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
+        printf("SUMA MÉDIA: %.2f \n", resultado_notas);
+        printf("Aprovado!!!\n");
+        printf("*****   *****");
+    }
 
+    else{
+        /*Se falso*/
+        printf("*****   *****");
+        printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
+        printf("SUMA MÉDIA: %.2f \n", resultado_notas);
+        printf("Reprovado!!!\n");
+        printf("*****   *****");
+
+    }
     
     return 0; //Fim do programa : return 0; indica que o programa terminou com sucesso..
 
