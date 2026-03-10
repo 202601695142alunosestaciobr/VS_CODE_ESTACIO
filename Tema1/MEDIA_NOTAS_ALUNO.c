@@ -2,9 +2,9 @@
 
 int main(){ //Função principal : Começa a execução. Toda aplicação em C começa pela função main.
 
-    char nome_aluno[20] = "Vanderson";//Para arrray utilizar "" aspas duplas.
+    char nome_aluno[30] = "Vanderson";//Para arrray utilizar "" aspas duplas.
     char turma = 'A'; // Sempre que for um caractere no char utilizar '' aspas simples.
-    int matricula = 0;
+    int matricula = 0, opcao = 0;
     float nota_portugues = 0, nota_matematica = 0, nota_redacao = 0, nota_ciencia = 0;
     float soma_soma_notas = 0, resultado_notas = 0;
 
@@ -17,35 +17,131 @@ int main(){ //Função principal : Começa a execução. Toda aplicação em C c
     printf("QUAL SUA TURMA: \n");
     scanf(" %c", &turma); // Sempre lembrar que ao atribuir char um caractere deve usar & e tambem espçao entre antes %c
     printf("\n *****   *****\n");
-    printf("DIGITE SUA NOTA PORTUGUÊS: \n");
-    scanf("%f", &nota_portugues);
-    printf("DIGITE SUA NOTA MATEMATICA: \n");
-    scanf("%f", &nota_matematica);
-    printf("DIGITE SUA NOTA REDAÇÃO: \n");
-    scanf("%f", &nota_redacao);
-    printf("DIGITE SUA NOTA CIÊNCIA: \n");
-    scanf("%f", &nota_ciencia);
+    printf("1. Simulação Média Notas\n2. Resultado Final\n3. Sair\n\n");
+    printf("Escolha uma opção: ");
+    scanf("%i", &opcao);
+    
+    switch (opcao)
+    {
+    case 1:
+        printf("DIGITE SUA NOTA PORTUGUÊS: \n");
+        scanf("%f", &nota_portugues);
 
-    soma_soma_notas = nota_portugues + nota_matematica + nota_redacao + nota_ciencia;
-    resultado_notas = soma_soma_notas/4;
+        if (nota_portugues >= 0 && nota_portugues <= 10)
+        {
+            printf("DIGITE SUA NOTA MATEMATICA: \n");
+            scanf("%f", &nota_matematica);
 
-    if(resultado_notas >= 7){//Estruturas de decisão composta if-else, compara dois valores e reage ao código.
-        /*Se Verdadeiro*/
+            if (nota_matematica >= 0 && nota_matematica <= 10)
+            {
+                printf("DIGITE SUA NOTA REDAÇÃO: \n");
+                scanf("%f", &nota_redacao);
+
+                if (nota_redacao >= 0 && nota_redacao <= 10)
+                {
+                    printf("DIGITE SUA NOTA CIÊNCIA: \n\n");
+                    scanf("%f", &nota_ciencia);
+
+                    if (nota_ciencia >= 0 && nota_ciencia <= 10)
+                    {
+                        soma_soma_notas = nota_portugues + nota_matematica + nota_redacao + nota_ciencia;
+                        resultado_notas = soma_soma_notas/4;
+                    }else{
+                        printf("Refaça sua solicitacao!\n");
+                    }
+
+                }else{
+                    printf("Digite Valor valido!\n\n");
+                    printf("DIGITE SUA NOTA REDAÇÃO: \n");
+                    scanf("%f", &nota_redacao);
+                }
+                
+            }else{
+                printf("Digite Valor valido!\n\n");
+                printf("DIGITE SUA NOTA MATEMATICA: \n");
+                scanf("%f", &nota_matematica);
+            }
+            
+        }else{
+            printf("Digite Valor valido!\n\n");
+            printf("DIGITE SUA NOTA PORTUGUÊS: \n");
+            scanf("%f", &nota_portugues);
+        }
+        
         printf("*****   *****");
         printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
         printf("SUMA MÉDIA: %.2f \n", resultado_notas);
-        printf("Aprovado!!!\n");
-        printf("*****   *****");
-    }
 
-    else{
-        /*Se falso*/
-        printf("*****   *****");
-        printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
-        printf("SUMA MÉDIA: %.2f \n", resultado_notas);
-        printf("Reprovado!!!\n");
-        printf("*****   *****");
+        break;
+    case 2:
 
+        printf("DIGITE SUA NOTA PORTUGUÊS: \n");
+        scanf("%f", &nota_portugues);
+
+        if (nota_portugues >= 0 && nota_portugues <= 10)
+        {
+            printf("DIGITE SUA NOTA MATEMATICA: \n");
+            scanf("%f", &nota_matematica);
+
+            if (nota_matematica >= 0 && nota_matematica <= 10)
+            {
+                printf("DIGITE SUA NOTA REDAÇÃO: \n");
+                scanf("%f", &nota_redacao);
+
+                if (nota_redacao >= 0 && nota_redacao <= 10)
+                {
+                    printf("DIGITE SUA NOTA CIÊNCIA: \n\n");
+                    scanf("%f", &nota_ciencia);
+
+                    if (nota_ciencia >= 0 && nota_ciencia <= 10)
+                    {
+                        soma_soma_notas = nota_portugues + nota_matematica + nota_redacao + nota_ciencia;
+                        resultado_notas = soma_soma_notas/4;
+
+                        if(resultado_notas >= 7){//Estruturas de decisão composta if-else, compara dois valores e reage ao código.
+                        /*Se Verdadeiro*/
+                        printf("*****   *****");
+                        printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
+                        printf("SUMA MÉDIA: %.2f \n", resultado_notas);
+                        printf("Aprovado!!!\n");
+                        printf("*****   *****");
+                        }else{
+                        /*Se falso*/
+                        printf("*****   *****");
+                        printf("\n NOME: %s \n MATRICULA: %d \n TURMA: %c \n ", nome_aluno, matricula, turma);
+                        printf("SUMA MÉDIA: %.2f \n", resultado_notas);
+                        printf("Reprovado!!!\n");
+                        printf("*****   *****");
+                        }
+
+                    }else{
+                        printf("Refaça sua solicitacao!\n");
+                    }
+
+                }else{
+                    printf("Digite Valor valido!\n\n");
+                    printf("DIGITE SUA NOTA REDAÇÃO: \n");
+                    scanf("%f", &nota_redacao);
+                }
+                
+            }else{
+                printf("Digite Valor valido!\n\n");
+                printf("DIGITE SUA NOTA MATEMATICA: \n");
+                scanf("%f", &nota_matematica);
+            }
+            
+        }else{
+            printf("Digite Valor valido!\n\n");
+            printf("DIGITE SUA NOTA PORTUGUÊS: \n");
+            scanf("%f", &nota_portugues);
+        }        
+
+        break;
+    case 3:
+        /* code */
+        break;    
+    default:
+        break;
     }
     
     return 0; //Fim do programa : return 0; indica que o programa terminou com sucesso..
