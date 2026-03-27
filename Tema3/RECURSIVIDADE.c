@@ -12,6 +12,7 @@ void recursividade(int num){
     
 }
 
+/*Função pricipal*/
 int main(){
 
     int valor = 10;
