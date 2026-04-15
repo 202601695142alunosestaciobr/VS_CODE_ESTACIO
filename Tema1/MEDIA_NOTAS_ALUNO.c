@@ -1,58 +1,74 @@
 #include <stdio.h> //Inclusão da biblioteca : Padrão de entrada e saída, função printf.
 
-/*Declaração de variaveis globais para utilizar em todas as fnções do código.*/
+/*Declaração de variaveis globais para utilizar em todas as funções do código.*/
 float nota_portugues = 0, nota_matematica = 0, nota_redacao = 0, nota_ciencia = 0;
 
 /*Função para coletar as notas*/
 float coleta_notas(int num){
 
-            
         switch (num)
         {
         case 0:
-            printf("DIGITE SUA NOTA PORTUGUÊS: \n");
-            scanf("%f", &nota_portugues);
-            if (nota_portugues <= 0 && nota_portugues > 10)
+            /*Loop utilizado para garantir que tenha número valido*/
+            do
             {
+                printf("DIGITE SUA NOTA PORTUGUÊS: \n");
+                scanf("%f", &nota_portugues);
+
+                if (nota_portugues < 0 || nota_portugues > 10)
+                {
                 printf("Digite Valor valido!\n\n");
                 num = 0;
-            }else{
-
+                }else{
                 num = 1;
-            }
+                }
+
+            } while (!num);//caso seja falso sai do loop
             break;
         case 1:
-            printf("DIGITE SUA NOTA MATEMATICA: \n");
-            scanf("%f", &nota_matematica);
-            if (nota_matematica <= 0 && nota_matematica > 10)
+            /*Loop utilizado para garantir que tenha número valido*/
+            do
             {
-                printf("Digite Valor valido!\n");
-                num = 1;
-            }else{
-
-                num = 2;
-            }                           
+                printf("DIGITE SUA NOTA MATEMATICA: \n");
+                scanf("%f", &nota_matematica);
+                if (nota_matematica < 0 || nota_matematica > 10)
+                {
+                    printf("Digite Valor valido!\n");
+                    num = 0;
+                }else{
+                    num = 1;
+                }
+            } while (!num);                 
             break;
         case 2:
-            printf("DIGITE SUA NOTA REDAÇÃO: \n");
-            scanf("%f", &nota_redacao);
-            if (nota_redacao <= 0 && nota_redacao > 10)
+            /*Loop utilizado para garantir que tenha número valido*/
+            do
             {
-                printf("Digite Valor valido!\n\n");
-                num = 2;
-            }else{
-
-                num = 3;
-            }                
+                printf("DIGITE SUA NOTA REDAÇÃO: \n");
+                scanf("%f", &nota_redacao);
+                if (nota_redacao < 0 || nota_redacao > 10)
+                {
+                    printf("Digite Valor valido!\n\n");
+                    num = 0;
+                }else{
+                num = 1;
+                }
+            } while (!num);               
             break;
         case 3:
-            printf("DIGITE SUA NOTA CIÊNCIA: \n");
-            scanf("%f", &nota_ciencia);
-            if (nota_ciencia <= 0 && nota_ciencia > 10)
+            /*Loop utilizado para garantir que tenha número valido*/
+            do
             {
-                printf("Digite Valor valido!\n\n");
-                num = 3;
-            }                
+                printf("DIGITE SUA NOTA CIÊNCIA: \n");
+                scanf("%f", &nota_ciencia);
+                if (nota_ciencia < 0 || nota_ciencia > 10)
+                {
+                    printf("Digite Valor valido!\n\n");
+                    num = 0;
+                }else{
+                    num = 1;
+                }
+            } while (!num);          
             break;
         default:
             printf("Refaça sua solicitacao!\n");
@@ -107,7 +123,7 @@ int main(){ //Função principal : Começa a execução. Toda aplicação em C c
     {
     case 1:
 
-        /*Chama as diversas funções que coletaração as respostas e farão a logica do programa.*/
+        /*Chama as diversas funções que coletaração respostas e farão a logica do programa.*/
         coleta_notas(0);
         coleta_notas(1);
         coleta_notas(2);

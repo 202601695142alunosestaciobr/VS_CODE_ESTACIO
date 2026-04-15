@@ -25,9 +25,9 @@ int main(){
 
                 break;//saida do loop
             }
-            
+
         }
-        
+
         if (verificador)// se verdadeiro saída do segundo loop
         {
             break;
@@ -36,10 +36,10 @@ int main(){
     }
     
     if (!verificador)//Se não localizado retorna a informação para usuário.
-        {
-            printf("\n\nNumero %d não localizado na base de dados!", buscador);
+    {
+        printf("\n\nNumero %d não localizado na base de dados!", buscador);
 
-        }
+    }
 
     return 0;
 }
